@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% { 
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@font-face {
+    font-family: GothanBook;
+    src: url(../fonts/GothamBookRegular.otf);
+}
+
+@font-face {
+    font-family: GothanMedium;
+    src: url(../fonts/GothamMedium.otf);
+}
+
+
+* {
+    margin: 0;
+}
+
+
+:root{
+    --header-font-color: #000;
+    --h1-color: #393c41;
+    --h2-color: #6e7378;
+    --btn-dark-bg: rgba(23, 26, 32, 0.8);
+    --btn-light-bg: rgba(255, 255, 255, 0.65);
+    --btn-dark-color: #FFF;
+    --bhtn-light-color: #000;
+}
+
+
+body {
+    font-family: 'GothanBook', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    width: 120px;
+    margin-left: 20px;
+}
+
+.modais ul, .aside-tesla ul {
+    display: flex;
+    align-items: center;
+}
+
+.modais li, .aside-tesla li {
+    margin: 0px 10px;
+}
+
+.modais a, .aside-tesla a {
+    text-decoration: none;
+    color: var(--header-font-color);
+    text-transform: uppercase;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+main {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.desvla-topic {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desvla-title {
+    font-size: 40px;
+    font-weight: normal;
+    color: var(--h1-color);
+    padding-bottom: 10px;
+}
+
+.desvla-subtitle {
+    font-size: 14px;
+    font-family: 'GothanBook' ,Arial, Helvetica, sans-serif;
+    color: var(--h2-color);
+}
+
+.delivery {
+    color: var(--h1-color);
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.container-button a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 220px;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 0px 30px;
+}
+
+.custom-order-btn {
+    color: var(--btn-dark-color);
+    background-color: var(--btn-dark-bg);
+}
+
+.inventory-btn{
+    color: var(--btn-light-color);
+    background-color: var(--btn-light-bg);
+}
+
+.arrow-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 30px;
+}
+
+.arrow-area > img {
+    height: 15px;
+    animation: arrow 2s infinite;    
+}
+
+@media(max-width: 1200px) {
+
+    .modais, .aside-tesla li {
+        display: none;
+    }
+
+    .aside-tesla .menu {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+@media(max-width: 600px){
+    .container-button {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container-button a {
+        margin: 10px 20px;
+        width: calc(100% - 60px);
+    }
+}
